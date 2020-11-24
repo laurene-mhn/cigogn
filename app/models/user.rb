@@ -6,4 +6,5 @@ class User < ApplicationRecord
   
   belongs_to :partner, class_name: "User", optional: true
   has_many :choices
+  has_many :filters
 end
