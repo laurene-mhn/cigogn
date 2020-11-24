@@ -10,6 +10,7 @@ require "open-uri"
 
 User.destroy_all
 Name.destroy_all
+Choice.destroy_all
 
 puts "Creating users"
 user = User.new(email: 'gregoire@cigogn.fr', password: '123456', password_confirmation: '123456', first_name: "Gregoire", last_name: "Lemesle")
