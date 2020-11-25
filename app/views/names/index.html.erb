@@ -1,0 +1,5 @@
+<div class="container">
+  <p><%= @name.name %></p>
+  <%= link_to "accepted", choices_path(name_id: @name.id, decision: "accepted"), method: :post %>
+  <%= link_to "declined", choices_path(name_id: @name.id, decision: "declined"), method: :post %>
+</div>
