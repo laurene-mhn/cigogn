@@ -5,6 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   belongs_to :partner, class_name: "User", optional: true
-  has_many :choices
+  has_many :choices, dependent: :destroy
   has_many :filters
 end
