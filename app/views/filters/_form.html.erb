@@ -1,0 +1,24 @@
+
+    <%= simple_form_for @filter, html: { class: "form-filters"} do |f| %>
+
+      <%= f.input :gender, as: :radio_buttons, collection: Filter::GENDER, wrapper: :vertical_collection_inline %>
+
+      <%= f.input :origin, collection: Filter::ORIGIN %>
+
+      <%= f.input :popularity, collection: Filter::POPULARITY %>
+
+      <%= f.input :length, collection: Filter::LENGTH %>
+
+      <%= f.input :start_with %>
+
+      <%= f.input :end_with %>
+
+      <%= f.input :astrology, collection: Filter::ASTROLOGY %>
+
+      <%= f.input :hyphenated_name, label:"prénom composé", input_html: { class: "toggle" }%>
+
+      <%= f.button :submit, class: "btn-primary" %>
+
+      <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+
+    <% end %>
