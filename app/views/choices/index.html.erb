@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Favorites</h1>
+  <ul>
+    <% @choices_accepted.each do |choice| %>
+      <li><%= choice.name.name %> </li>
+    <% end %>
+  </ul>
+  <h1>Declined</h1>
+  <ul>
+    <% @choices_declined.each do |choice| %>
+      <li><%= choice.name.name %> </li>
+    <% end %>
+  </ul>
+</div>
