@@ -7,8 +7,8 @@
 
 .circle-btn {
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: 73px;
+  height: 73px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,7 +19,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 34px;
+    font-size: 22px;
   }
 }
 
@@ -31,9 +31,110 @@
   color: $red;
 }
 
+// .infos-btn {
+//   background-color: $dark-yellow;
+// }
 .infos-btn {
-  i {
   display: flex;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
   justify-content: center;
-  }
+  height: 8%;
+  align-items: center;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  color: $blue2;
+  font-size: xx-large;
+  font-weight: bolder;
+  padding-bottom: 10%;
+}
+
+.back-btn {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
+  // background-color: $blue2;
+  justify-content: center;
+  height: 8%;
+  align-items: center;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  color: $blue2;
+  font-size: xx-large;
+  font-weight: bolder;
+  padding-bottom: 10%;
+}
+
+.infos-btn-boy {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
+  justify-content: center;
+  height: 8%;
+  align-items: center;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  color: $blue2;
+  font-size: xx-large;
+  font-weight: bolder;
+  padding-bottom: 10%;
+}
+
+.infos-btn-girl {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
+  justify-content: center;
+  height: 8%;
+  align-items: center;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  color: $dark-pink;
+  font-size: xx-large;
+  font-weight: bolder;
+  padding-bottom: 10%;
+}
+
+.back-btn-boy {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
+  // background-color: $blue2;
+  justify-content: center;
+  height: 8%;
+  align-items: center;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  color: $blue2;
+  font-size: xx-large;
+  font-weight: bolder;
+  padding-bottom: 10%;
+}
+
+.back-btn-girl {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0px;
+  // background-color: $blue2;
+  justify-content: center;
+  height: 8%;
+  align-items: center;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  color: $dark-pink;
+  font-size: xx-large;
+  font-weight: bolder;
+  padding-bottom: 10%;
 }

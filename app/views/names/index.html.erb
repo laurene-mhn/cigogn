@@ -1,5 +1,49 @@
-<div class="container">
-  <p><%= @name.name %></p>
-  <%= link_to "accepted", choices_path(name_id: @name.id, decision: "accepted"), method: :post %>
-  <%= link_to "declined", choices_path(name_id: @name.id, decision: "declined"), method: :post %>
+<%# <div class="container"> %>
+  <%# <p>= @name.name</p> %>
+  <%#= link_to "accepted", choices_path(name_id: @name.id, decision: "accepted"), method: :post %>
+  <%#= link_to "declined", choices_path(name_id: @name.id, decision: "declined"), method: :post %>
+<%# </div> %>
+
+<div class="full-screen">
+  <div class="cards-container">
+    <div class="name-cards flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front <%= @name.gender %>-card">
+          <div class="name-text">
+            <div style="height:10px;">
+            </div>
+            <div class="first-name">
+              <%= @name.name %>
+            </div>
+            <div class="last-name">
+              DURAND
+            </div>
+          </div>
+          <div class="infos-btn-<%= @name.gender %>">
+            <%# INFO %>
+            <i class="fas fa-plus-circle"></i>
+          </div>
+        </div>
+        <div class="flip-card-back <%= @name.gender %>-card">
+          <div class="name-back-card">LÉO</div>
+          <div class="name-infos">
+            <p><strong>Meaning</strong> : Something cool I swear</p>
+            <p><strong>Origin :</strong> Random</p>
+          </div>
+          <div class="back-btn-<%= @name.gender %>">
+            <i class="fas fa-arrow-circle-left"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="buttons-container">
+    <div class="circle-btn circle-btn-dislike">
+      <i class="fas fa-times"></i>
+    </div>
+
+    <div class="circle-btn circle-btn-like">
+      <i class="fas fa-heart"></i>
+    </div>
+  </div>
 </div>

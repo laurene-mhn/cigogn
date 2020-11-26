@@ -1,23 +1,36 @@
 <%# <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p> %>
 
-<div class="100visible">
+<div class="full-screen">
   <div class="cards-container">
-    <div class="name-cards mixed-card">
-      <div class="name-text">
-        <div class="first-name">
-          <p>ALIX</p>
+    <div class="name-cards flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front boy-card">
+          <div class="name-text">
+            <div style="height:10px;">
+            </div>
+            <div class="first-name">
+              LÉO
+            </div>
+            <div class="last-name">
+              DURAND
+            </div>
+          </div>
+          <div class="infos-btn">
+            <%# INFO %>
+            <i class="fas fa-plus-circle"></i>
+          </div>
         </div>
-        <div class="last-name">
-          <p>DURAND</p>
+        <div class="flip-card-back boy-card">
+          <div class="name-back-card">LÉO</div>
+          <div class="name-infos">
+            <p><strong>Meaning</strong> : Something cool I swear</p>
+            <p><strong>Origin :</strong> Random</p>
+          </div>
+          <div class="back-btn">
+            <i class="fas fa-arrow-circle-left"></i>
+          </div>
         </div>
-      </div>
-      <div class="name-infos">
-        <p><strong>Meaning</strong> : Something cool I swear</p>
-        <p><strong>Origin :</strong> Random</p>
-      </div>
-      <div class="infos-btn">
-        <i class="fas fa-plus-circle">Info</i>
       </div>
     </div>
   </div>
@@ -37,6 +50,23 @@
   <p class="name">Name</p>
 </div>
 
-<div class="name-cards boy-card">
-  <p class="name">Name</p>
-</div>
+  <div class="cards-container">
+    <div class="name-cards mixed-card">
+      <div class="name-text">
+        <div class="first-name">
+          <p>ALIX</p>
+        </div>
+        <div class="last-name">
+          <p>DURAND</p>
+        </div>
+      </div>
+      <%# <div class="name-infos">
+        <p><strong>Meaning</strong> : Something cool I swear</p>
+        <p><strong>Origin :</strong> Random</p>
+      </div> %>
+      <div class="infos-btn">
+        <i class="fas fa-plus-circle">Info</i>
+      </div>
+    </div>
+  </div>
+  
