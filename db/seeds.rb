@@ -34,17 +34,17 @@ puts "Finished"
 
 puts "Creating names"
 
-name = Name.new(name: "marion", gender: "girl", origin: "spanish", etymology: "myriam", meaning: "Marion as a girl's name is of French origin and a variant of the Latin for Mary, 'star of the sea'. This form was changed into Marian when introduced to Britain in the Middle Ages, but was revived in the 19th century.", personality: "Live an easy, uncomplicated life.", popularity: "popular", astrology: "pisces", feast_day: "15/08")
-      name.save
+name = Name.new(name: "marion", gender: "girl", origin: ["hebrew"], etymology: "myriam", meaning: "Marion as a girl's name is of French origin and a variant of the Latin for Mary, 'star of the sea'. This form was changed into Marian when introduced to Britain in the Middle Ages, but was revived in the 19th century.", personality: "Live an easy, uncomplicated life.", popularity: "popular", astrology: "pisces", feast_day: "15/08")
+name.save!
 
-name1 = Name.new(name: "antony", gender: "boy", origin: "french", etymology: "anthos, anthonus", meaning: "highly praiseworthy.", personality: "to lead the way for others. Live the thrill of the moment.", popularity: "rare", astrology: "scorpio", feast_day: "13/06")
-      name1.save
+name1 = Name.new(name: "antony", gender: "boy", origin: ["french", "latin"], etymology: "anthos, anthonus", meaning: "highly praiseworthy.", personality: "to lead the way for others. Live the thrill of the moment.", popularity: "rare", astrology: "scorpio", feast_day: "13/06")
+name1.save!
 
-name2 = Name.new(name: "camille", gender: "unisex", origin: "french", etymology: "camillius", meaning: "Camille comes from the French Camilla, which gets its Latin heritage from Camillus, an old Roman surname. Back in the day, Camillus meant a boy who helped the priests during Mass. Though Camille is known as a girls' name in the US, it has been a boys' name even longer in French-speaking countries (think Camille Pissarro, the celebrated French impressionist painter).", personality: "To triomph and survive against all opposition.", popularity: "popular", astrology: "leo", feast_day: "14/07")
-      name2.save
+name2 = Name.new(name: "camille", gender: "unisex", origin: ["french", "english", "latin"], etymology: "camillius", meaning: "Camille comes from the French Camilla, which gets its Latin heritage from Camillus, an old Roman surname. Back in the day, Camillus meant a boy who helped the priests during Mass. Though Camille is known as a girls' name in the US, it has been a boys' name even longer in French-speaking countries (think Camille Pissarro, the celebrated French impressionist painter).", personality: "To triomph and survive against all opposition.", popularity: "popular", astrology: "leo", feast_day: "14/07")
+name2.save!
 
-name3 = Name.new(name: "laurene", gender: "girl", origin: "french", etymology: "laurentum", meaning: "laurus.", personality: "laurene is a simple and natural woman who has her feet on the ground.", popularity: "rare", astrology: "aries", feast_day: "10/08")
-      name3.save
+name3 = Name.new(name: "laurene", gender: "girl", origin: ["french"], etymology: "laurentum", meaning: "laurus.", personality: "laurene is a simple and natural woman who has her feet on the ground.", popularity: "rare", astrology: "aries", feast_day: "10/08")
+name3.save!
 
 puts "Finished"
 
