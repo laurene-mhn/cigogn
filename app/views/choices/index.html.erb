@@ -14,11 +14,11 @@
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
     <% if @choices_accepted.nil? %>
-      <p> You have no favorite names now. Please swipe !</p>
+      <p>You have no favorite names now. Please swipe !</p>
     <% else %>
       <ul>
         <% @choices_accepted.each do |choice| %>
-          <li><%= choice.name.name %> </li>
+          <li><%= choice.name.name %></li>
         <% end %>
       </ul>
     <% end %>
