@@ -7,6 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require "open-uri"
+require 'json'
+require 'net/http'
+
+
 
 User.destroy_all
 Name.destroy_all
@@ -45,7 +49,34 @@ name2.save!
 
 name3 = Name.new(name: "laurene", gender: "girl", origin: ["french"], etymology: "laurentum", meaning: "laurus.", personality: "laurene is a simple and natural woman who has her feet on the ground.", popularity: "rare", astrology: "aries", feast_day: "10/08")
 name3.save!
-
 puts "Finished"
+
+
+puts "Creating name from json"
+
+url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=liste_des_prenoms&q=&rows=999&facet=sexe&facet=annee&facet=prenoms"
+uri = URI(url)
+
+response = Net::HTTP.get(uri)
+j = JSON.parse(response)
+
+p j["records"].class
+j["records"].each do |r|
+
+  f = r["fields"]
+  p f["prenoms"]
+  p f["sexe"]
+
+#   n = Name.new
+#   if f["sexe"] == "M"
+#     n.GENDER == "boy"
+#   else
+#     n.GENDER == "girl"
+#   end
+end
+
+
+
+
 
 # USERS = [user, user1, user2, user3]
