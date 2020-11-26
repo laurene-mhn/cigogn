@@ -53,4 +53,115 @@
   align-items: center;
 }
 
+// Text align left for label
 
+.size-label {
+    width: 40%;
+}
+
+// Checkboxes designed like pills
+
+.wrapper-tags {
+  display: block
+}
+
+.tag-item {
+  display: inline-block;
+}
+
+.tag-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.tag-selector + label {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 0.7rem;
+  border-radius: 50rem;
+  padding: 0.1rem 0.5rem;
+  background-color: $light-gray;
+  color: $orange;
+  border: 1px solid $orange;
+  margin-right: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
+.tag-selector:checked + label {
+  background-color: $orange;
+  color: white;
+}
+
+#new_filter > fieldset.form-group.check_boxes.optional.filter_astrology,
+#new_filter > fieldset.form-group.check_boxes.optional.filter_length,
+#new_filter > fieldset.form-group.check_boxes.optional.filter_origin,
+#new_filter > fieldset.form-group.check_boxes.optional.filter_popularity
+{
+  display: inline-block
+}
+
+// Dynamic rich radio buttons
+
+.gender-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width:100%;
+  // flex-wrap: wrap;
+}
+
+.gender-item {
+  flex: 0 0 30%;
+}
+
+.gender-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.gender-selector + label {
+  display: block;
+  cursor: pointer;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  padding: 10px 10px 30px 10px;
+  border: 1px solid #EAEAEA;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.gender-selector:checked + label {
+  color: white !important;
+  background-color:$orange;
+}
+
+
+#snippet_gender_all + label {
+  color: #FD1015;
+}
+
+#snippet_gender_all:checked + label {
+  background-color: $yellow;
+  border-color: $yellow;
+}
+
+
+#snippet_gender_girl + label {
+  color: $dark-pink;
+}
+
+#snippet_gender_girl:checked + label {
+  background-color: $dark-pink;
+  border-color: $dark-pink;
+}
+
+
+#snippet_gender_boy + label {
+  color: blue;
+}
+
+#snippet_gender_boy:checked + label {
+  background-color: blue;
+  border-color: blue;
+}

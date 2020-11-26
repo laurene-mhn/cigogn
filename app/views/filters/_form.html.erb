@@ -1,24 +1,58 @@
 
     <%= simple_form_for @filter, html: { class: "form-filters"} do |f| %>
 
-      <%= f.input :gender, as: :radio_buttons, collection: Filter::GENDER, wrapper: :vertical_collection_inline %>
+      <%#= f.input :gender, as: :radio_buttons, collection: ['all', 'girls', 'boys'], wrapper: :vertical_collection_inline, legend_html: { class: "size-label" } %>
 
-      <%= f.input :origin, collection: Filter::ORIGIN %>
 
-      <%= f.input :popularity, collection: Filter::POPULARITY %>
+      <%= f.input :gender,
+            as: :radio_buttons,
+            collection_wrapper_tag: 'div',
+            collection_wrapper_class: 'gender-wrapper',
+            item_wrapper_class: 'gender-item',
+            input_html: {class: 'gender-selector'},
+            checked: 'all',
+            collection: ['all', 'girls', 'boys'] %>
 
-      <%= f.input :length, collection: Filter::LENGTH %>
 
-      <%= f.input :start_with %>
+      <%= f.input :origin,
+                  collection: Filter::ORIGIN,
+                  label_html: { class: "size-label" },
+                  as: :check_boxes,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
 
-      <%= f.input :end_with %>
+      <%= f.input :popularity,
+                  collection: Filter::POPULARITY,
+                  as: :check_boxes,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
 
-      <%= f.input :astrology, collection: Filter::ASTROLOGY %>
 
-      <%= f.input :hyphenated_name, label:"prénom composé", input_html: { class: "toggle" }%>
+      <%#= f.input :length, collection: Filter::LENGTH, label_html: { class: "size-label" }%>
 
-      <%= f.button :submit, class: "btn-primary" %>
+      <%= f.input :length,
+                  collection: Filter::LENGTH,
+                  as: :check_boxes,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
 
-      <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+
+      <%= f.input :start_with, label_html: { class: "size-label" } %>
+
+      <%= f.input :end_with, label_html: { class: "size-label" } %>
+
+      <%= f.input :astrology,
+                  collection: Filter::ASTROLOGY,
+                  as: :check_boxes,
+                  input_html: { class: "tag-selector" },
+                  item_wrapper_class: 'tag-item' %>
+
+      <%= f.input :hyphenated_name, label:"Hyphenated name", input_html: { class: "toggle size-label" }%>
+
+      <div class="text-center">
+        <%= f.button :submit, class: "btn-warning" %>
+
+        <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+      </div>
 
     <% end %>
