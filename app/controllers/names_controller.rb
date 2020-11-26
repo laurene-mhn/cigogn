@@ -1,6 +1,6 @@
 class NamesController < ApplicationController
   def index
-    names = Name.where.not(id: chosen_nameids)
+    names = policy_scope(Name).where.not(id: chosen_nameids)
     if true
       names = names.where(gender: ["girl", "unisex"])
     end
