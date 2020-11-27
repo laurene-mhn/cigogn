@@ -5,11 +5,11 @@ class Filter < ApplicationRecord
   ASTROLOGY = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"]
   LENGTH = ["short 0-5ch", "medium 6-9ch", "long 10ch & more"]
   POPULARITY = ["rare", "common", "popular"]
-  validates :gender, inclusion: { in: GENDER }
+  # validates :gender, inclusion: { in: GENDER }
   # validates :origin, inclusion: { in: ORIGIN }
   # validates :astrology, inclusion: { in: ASTROLOGY }
   # validates :length, inclusion: { in: LENGTH }
-  validates :popularity, inclusion: { in: POPULARITY }
+  # validates :popularity, inclusion: { in: POPULARITY }
   validates_intersection_of :origin, in: ORIGIN, message: "invalid permission"
   validates_intersection_of :origin, within: ORIGIN, message: "invalid permission"
   validates_intersection_of :astrology, in: ASTROLOGY, message: "invalid permission"
