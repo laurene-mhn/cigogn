@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-4 col-sm-offset-'">
-      <h2>Log in</h2>
-
+      <br>
+      <h3>Log in</h3>
+      <hr>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
@@ -16,11 +17,17 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in" %>
+          <%= f.button :submit, "Log in", class: "btn btn-form" %>
         </div>
       <% end %>
+      <hr>
 
-      <%= render "devise/shared/links" %>
+      <div class="shared_links">
+        <%= render 'devise/shared/links' %>
+      </div>
+
+
     </div>
   </div>
 </div>
+
