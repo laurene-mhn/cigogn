@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: 5%;;
+  margin-top: 10%;
 }
 
 .circle-btn {
@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // box-shadow: 0 0 7px rgba(0,0,0,0.1);
+  box-shadow: 0 0 7px rgba(0,0,0,0.1);
   background-color: white;
   margin: 5%;
   i {
@@ -69,72 +69,15 @@
   padding-bottom: 10%;
 }
 
-.infos-btn-boy {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 0px;
-  justify-content: center;
-  height: 8%;
-  align-items: center;
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
+.btn-boy {
   color: $blue2;
-  font-size: xx-large;
-  font-weight: bolder;
-  padding-bottom: 10%;
 }
 
-.infos-btn-girl {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 0px;
-  justify-content: center;
-  height: 8%;
-  align-items: center;
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
+.btn-girl {
   color: $dark-pink;
-  font-size: xx-large;
-  font-weight: bolder;
-  padding-bottom: 10%;
 }
 
-.back-btn-boy {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 0px;
-  // background-color: $blue2;
-  justify-content: center;
-  height: 8%;
-  align-items: center;
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  color: $blue2;
-  font-size: xx-large;
-  font-weight: bolder;
-  padding-bottom: 10%;
-}
-
-.back-btn-girl {
-  display: flex;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  bottom: 0px;
-  // background-color: $blue2;
-  justify-content: center;
-  height: 8%;
-  align-items: center;
-  border-bottom-left-radius: 7px;
-  border-bottom-right-radius: 7px;
-  color: $dark-pink;
-  font-size: xx-large;
-  font-weight: bolder;
-  padding-bottom: 10%;
+.btn-unisex {
+  color: black;
+  opacity: 0.33;
 }
