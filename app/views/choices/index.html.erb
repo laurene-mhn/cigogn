@@ -20,23 +20,19 @@
       <p>You have no favorite names now. Please swipe !</p>
     <% else %>
       <% @choices_accepted.each do |choice| %>
-      <div class="fav-cards">
+      <div class="fav-cards <%= choice.name.gender %>-fav-cards">
         <div class="fav-content">
           <%= choice.name.name.capitalize %>
         </div>
-        <div class="fav-actions">
-          <a href="#"><i class="far fa-trash-alt"></i></a>
-        </div>
+        <%= link_to choice_path(choice), method: :put do  %>
+          <div class="fav-actions">
+            <i class="far fa-trash-alt"></i>
+          </div>
+        <% end %>
       </div>
       <% end %>
     <% end %>
     </div>
-
-
-
-
-
-
 
 
     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
