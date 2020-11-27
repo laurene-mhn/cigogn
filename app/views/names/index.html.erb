@@ -25,9 +25,9 @@
           </div>
         </div>
         <div class="flip-card-back <%= @name.gender %>-card">
-          <div class="name-back-card"><%= @name.name %></div>
+          <div class="name-back-card"><%= @name.name.upcase %></div>
           <div class="name-infos">
-            <p><strong>Meaning</strong> <%= @name.meaning %></p>
+            <p><strong>Meaning :</strong> <%= @name.meaning %></p>
             <p><strong>Origin :</strong> <%= @name.origin.first %></p>
           </div>
           <div class="back-btn btn-<%= @name.gender %>">
