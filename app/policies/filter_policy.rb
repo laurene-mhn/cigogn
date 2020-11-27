@@ -12,5 +12,4 @@ class FilterPolicy < ApplicationPolicy
   def new?
     create?
   end
-
 end
