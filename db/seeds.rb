@@ -54,7 +54,7 @@ puts "Finished"
 
 puts "Creating name from json"
 
-url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=liste_des_prenoms&q=&rows=999&facet=sexe&facet=annee&facet=prenoms"
+url = "https://opendata.paris.fr/api/records/1.0/search/?dataset=liste_des_prenoms&q=&rows=20&facet=sexe&facet=annee&facet=prenoms"
 uri = URI(url)
 
 response = Net::HTTP.get(uri)
@@ -67,12 +67,15 @@ j["records"].each do |r|
   p f["prenoms"]
   p f["sexe"]
 
-#   n = Name.new
-#   if f["sexe"] == "M"
-#     n.GENDER == "boy"
-#   else
-#     n.GENDER == "girl"
-#   end
+  n = Name.new
+  n.name = f["prenoms"]
+  if f["sexe"] == "M"
+    n.gender = "boy"
+  else
+    n.gender = "girl"
+  end
+  puts n.gender
+  n.save!
 end
 
 
