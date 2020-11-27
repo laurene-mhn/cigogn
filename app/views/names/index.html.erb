@@ -13,37 +13,41 @@
             <div style="height:10px;">
             </div>
             <div class="first-name">
-              <%= @name.name %>
+              <%= @name.name.capitalize %>
             </div>
             <div class="last-name">
               DURAND
             </div>
           </div>
-          <div class="infos-btn-<%= @name.gender %>">
+          <div class="infos-btn btn-<%= @name.gender %>">
             <%# INFO %>
             <i class="fas fa-plus-circle"></i>
           </div>
         </div>
         <div class="flip-card-back <%= @name.gender %>-card">
-          <div class="name-back-card">LÉO</div>
+          <div class="name-back-card"><%= @name.name %></div>
           <div class="name-infos">
-            <p><strong>Meaning</strong> : Something cool I swear</p>
-            <p><strong>Origin :</strong> Random</p>
+            <p><strong>Meaning</strong> <%= @name.meaning %></p>
+            <p><strong>Origin :</strong> <%= @name.origin.first %></p>
           </div>
-          <div class="back-btn-<%= @name.gender %>">
+          <div class="back-btn btn-<%= @name.gender %>">
             <i class="fas fa-arrow-circle-left"></i>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="buttons-container">
-    <div class="circle-btn circle-btn-dislike">
-      <i class="fas fa-times"></i>
-    </div>
 
-    <div class="circle-btn circle-btn-like">
-      <i class="fas fa-heart"></i>
-    </div>
+  <div class="buttons-container">
+    <%= link_to choices_path(name_id: @name.id, decision: "declined"), method: :post do %>
+      <div class="circle-btn circle-btn-dislike">
+        <i class="fas fa-times"></i>
+      </div>
+    <% end %>
+    <%= link_to choices_path(name_id: @name.id, decision: "accepted"), method: :post do %>
+      <div class="circle-btn circle-btn-like">
+        <i class="fas fa-heart"></i>
+      </div>
+    <% end %>
   </div>
 </div>
