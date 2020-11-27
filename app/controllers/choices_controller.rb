@@ -17,6 +17,7 @@ class ChoicesController < ApplicationController
 
   def update
     @choice = Choice.find(params[:id])
+    authorize @choice
     @choice.accepted = false
     @choice.save!
     redirect_to choices_path

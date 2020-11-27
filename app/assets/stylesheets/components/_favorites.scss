@@ -6,7 +6,6 @@
   width: 100%;
   margin-top: 5%;
   padding: 5%;
-  background-color: $yellow;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   border-radius: 7px;
   offset-multiplier: 4px;
@@ -22,6 +21,18 @@
   display: flex;
 }
 
-.fav-actions a {
+.fav-actions i {
   color: black;
+}
+
+.boy-fav-cards {
+  background-color: $blue;
+}
+
+.girl-fav-cards {
+  background-color: $pink;
+}
+
+.unisex-fav-cards {
+  background-color: $yellow;
 }
