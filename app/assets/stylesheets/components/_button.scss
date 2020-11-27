@@ -81,3 +81,26 @@
   color: black;
   opacity: 0.33;
 }
+
+.btn-form {
+  background-color: $orange;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border-radius: 20px;
+  width: 50%;
+  letter-spacing: 3px;
+}
+
+// .btn-form:hover {
+//   background-color: white;
+//   border-color: $orange;
+//   color: $orange;
+// }
+
+
+.shared_links a {
+  color: gray !important;
+  font-size: 12px;
+
+}

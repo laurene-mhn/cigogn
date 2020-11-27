@@ -1,9 +1,9 @@
 
 <%= simple_form_for @filter, html: { class: "form-filters"} do |f| %>
 
-  <%#= f.input :gender, as: :radio_buttons, collection: ['all', 'girls', 'boys'], wrapper: :vertical_collection_inline, legend_html: { class: "size-label" } %>
+  <%= f.input :gender, as: :radio_buttons, collection: ['all', 'girl', 'boy'], wrapper: :vertical_collection_inline, checked: 'all', legend_html: { class: "size-label" } %>
 
-  <%= f.input :gender,
+  <%#= f.input :gender,
               as: :radio_buttons,
               collection_wrapper_tag: 'div',
               collection_wrapper_class: 'gender-wrapper',
@@ -35,23 +35,24 @@
               input_html: { class: "tag-selector" },
               item_wrapper_class: 'tag-item' %>
 
+  <%= f.input :astrology,
+                collection: Filter::ASTROLOGY,
+                as: :check_boxes,
+                input_html: { class: "tag-selector" },
+                item_wrapper_class: 'tag-item' %>
 
   <%= f.input :start_with, label_html: { class: "size-label" } %>
 
   <%= f.input :end_with, label_html: { class: "size-label" } %>
 
-  <%= f.input :astrology,
-              collection: Filter::ASTROLOGY,
-              as: :check_boxes,
-              input_html: { class: "tag-selector" },
-              item_wrapper_class: 'tag-item' %>
+
 
   <%= f.input :hyphenated_name, label:"Hyphenated name", input_html: { class: "toggle size-label" }%>
 
   <div class="text-center">
-    <%= f.button :submit, class: "btn-warning" %>
+    <%= f.button :submit, value:"View names", class: "btn btn-form" %>
 
-    <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+    <%#= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
   </div>
 
 <% end %>
