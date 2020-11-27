@@ -10,9 +10,12 @@
       <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-baby"></i> Matches</a>
     </li>
   </ul> %>
-  
+
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <br>
+    <h3>Favorites names</h3>
+    <hr>
     <% if @choices_accepted.nil? %>
       <p>You have no favorite names now. Please swipe !</p>
     <% else %>
