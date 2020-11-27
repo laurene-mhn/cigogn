@@ -1,8 +1,10 @@
 class NamesController < ApplicationController
   def index
     names = policy_scope(Name).where.not(id: chosen_nameids)
+    filter = current_user.filter
     if true
-      names = names.where(gender: ["girl", "unisex"])
+      names = names.where(gender: filter.gender)
+      # names = names.where(gender: ["girl", "unisex"])
     end
 
     # names = names.where(origin: "french")

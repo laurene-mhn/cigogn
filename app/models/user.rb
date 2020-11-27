@@ -6,5 +6,5 @@ class User < ApplicationRecord
 
   belongs_to :partner, class_name: "User", optional: true
   has_many :choices, dependent: :destroy
-  has_many :filters
+  has_one :filter, dependent: :destroy
 end
