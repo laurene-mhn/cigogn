@@ -5,7 +5,18 @@
 }
 
 .navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+  position: fixed;
+  inset: 66px 0px 0px;
+  z-index: 1;
+  background-color: white;
+  transform: translateX(0%);
+  transition: transform 0.3s ease;
+  height: calc(100vh - 66px) !important;
+}
+
+.collapse:not(.show) {
+    display: block;
+    transform: translateX(100%);
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -16,16 +27,21 @@
   color: $dark-blue;
   text-align: center;
   font-size: 18px;
-  padding: 5px;
+  padding: 15px 0px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.nav-item a {
+  color: $dark-blue;
+}
+
+.nav-item a:hover {
+  color: $orange;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .navbar.navbar-4 .navbar-toggler-icon {
 background-image: url('https://mdbootstrap.com/img/svg/hamburger7.svg?color=EE6C4D');
-}
-.nav-item:hover {
-  color: $orange;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 .navbar-light .navbar-toggler {

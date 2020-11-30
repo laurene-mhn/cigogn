@@ -12,19 +12,19 @@
       <% if user_signed_in? %>
         <li class="nav-item">
           <%#= profile_path%>
-          <%= link_to "My profile", root_path, class: "nav-item" %>
+          <%= link_to "My profile", root_path %>
         </li>
         <li class="nav-item">
-          <%= link_to "Favorite names", choices_path, class: "nav-item" %>
+          <%= link_to "Favorite names", choices_path %>
         </li>
         <li class="nav-item">
-          <%= link_to "My matches", choices_path, class: "nav-item" %>
+          <%= link_to "My matches", choices_path %>
         </li>
         <li class="nav-item">
-          <%= link_to "My preferences", new_filter_path, class: "nav-item" %>
+          <%= link_to "My preferences", new_filter_path %>
         </li>
         <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
         </li>
         <% else %>
         <li class="nav-item">
