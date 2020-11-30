@@ -39,12 +39,12 @@
   </div>
 
   <div class="buttons-container">
-    <%= link_to choices_path(name_id: @name.id, decision: "declined"), method: :post do %>
+    <%= link_to choices_path(name_id: @name.id, decision: "declined"), method: :post, id: "decline-btn" do %>
       <div class="circle-btn circle-btn-dislike">
         <i class="fas fa-times"></i>
       </div>
     <% end %>
-    <%= link_to choices_path(name_id: @name.id, decision: "accepted"), method: :post do %>
+    <%= link_to choices_path(name_id: @name.id, decision: "accepted"), method: :post, id: "accept-btn" do %>
       <div class="circle-btn circle-btn-like">
         <i class="fas fa-heart"></i>
       </div>
