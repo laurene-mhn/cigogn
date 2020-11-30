@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get "/profile", to: "pages#profile"
   get "/add_partner", to: "users#add_partner"
   get "/end_list", to: "choices#end_list"
   resources :names, only: :index

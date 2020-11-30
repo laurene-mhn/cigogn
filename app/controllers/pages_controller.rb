@@ -3,4 +3,10 @@ class PagesController < ApplicationController
 
   def home
   end
+
+  def profile
+    if params[:code]
+      current_user.update(partner: User.find_by(code: params[:code]))
+    end
+  end
 end

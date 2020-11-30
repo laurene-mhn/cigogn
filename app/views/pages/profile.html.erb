@@ -1,0 +1,30 @@
+<div class="container">
+  <div>
+    <%= cl_image_tag current_user.photo.key, class: "avatar-profile" if current_user.photo.present? %>
+    <%# <img src="https://avatars0.githubusercontent.com/u/70512756?v=4.png" class="avatar-profile" /> %>
+  </div>
+  <div class="text-center">
+    <%= current_user.first_name %> <%= current_user.last_name %>
+    <br>
+    <%= current_user.partner ? current_user.partner.first_name : current_user.code %>
+  </div>
+  <div>
+    <form class="form-inline mt-3">
+      <div class="form-group mb-2">
+        <label for="inputCode" class="sr-only"></label>
+        <input type="code" class="form-control" id="inputCode" placeholder="<%= current_user.code %>">
+      </div>
+      <button type="submit" class="btn btn-primary ml-1 mb-2">Submit</button>
+    </form>
+  </div>
+
+  <div>
+    <form class="form-inline mt-3">
+      <div class="form-group mb-2">
+        <label for="inputCode" class="sr-only"></label>
+        <input type="code" class="form-control" id="inputCode" placeholder="Add you partners code">
+      </div>
+      <button type="submit" class="btn btn-primary ml-1 mb-2">Submit</button>
+    </form>
+  </div>
+</div>
