@@ -1,7 +1,7 @@
 
 <%= simple_form_for @filter, html: { class: "form-filters"} do |f| %>
 
-  <%= f.input :gender, as: :radio_buttons, collection: ['all', 'girl', 'boy'], wrapper: :vertical_collection_inline, checked: 'all', legend_html: { class: "size-label" } %>
+  <%= f.input :gender, as: :radio_buttons, label: "", collection: ['all', 'girl', 'boy'], wrapper: :vertical_collection_inline, checked: 'all', legend_html: { class: "size-label" } %>
 
   <%#= f.input :gender,
               as: :radio_buttons,
@@ -29,22 +29,24 @@
 
   <%#= f.input :length, collection: Filter::LENGTH, label_html: { class: "size-label" }%>
 
-  <%= f.input :length,
+  <%= f.input :length,label:"Name size",
               collection: Filter::LENGTH,
               as: :check_boxes,
               input_html: { class: "tag-selector" },
               item_wrapper_class: 'tag-item' %>
 
-  <%= f.input :astrology,
+  <%#= more filters %>
+
+  <%= f.input :astrology,label:"Astrology sign",
                 collection: Filter::ASTROLOGY,
                 as: :check_boxes,
                 input_html: { class: "tag-selector" },
                 item_wrapper_class: 'tag-item' %>
 
-  <%= f.input :start_with, label_html: { class: "size-label" } %>
 
-  <%= f.input :end_with, label_html: { class: "size-label" } %>
+    <%= f.input :start_with, placeholder:"Type first letter", label_html: { class: "size-label" } %>
 
+    <%= f.input :end_with, placeholder:"Type last syllable", label_html: { class: "size-label" } %>
 
 
   <%= f.input :hyphenated_name, label:"Hyphenated name", input_html: { class: "toggle size-label" }%>

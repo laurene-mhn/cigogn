@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -13,12 +13,14 @@
   border-radius: 50%;
 }
 .nav-item {
-  color: black;
-  text-align: right;
+  color: $dark-blue;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
 }
 
 .navbar.navbar-4 .navbar-toggler-icon {
-background-image: url('https://mdbootstrap.com/img/svg/hamburger7.svg?color=BFE100');
+background-image: url('https://mdbootstrap.com/img/svg/hamburger7.svg?color=EE6C4D');
 }
 .nav-item:hover {
   color: $orange;
@@ -36,3 +38,7 @@ background-image: url('https://mdbootstrap.com/img/svg/hamburger7.svg?color=BFE1
   font-size: 24px;
   font-weight: bold;
 }
+
+button:focus {
+    outline: none!important;
+  }

@@ -1,5 +1,11 @@
+// h3 {
+//   text-align: center;
+//   font-size: 25px;
+//   color: $dark-blue;
+// }
+
 .toggle {
-  position: absolute;
+  position: right;
   transform: scale(0);
 }
 
@@ -23,7 +29,7 @@
 }
 
 .toggle:checked + label::before {
-  background-color: #1EDD88;
+  background-color: $orange;
 }
 
 .toggle + label::after {
@@ -45,7 +51,7 @@
 }
 // ou input.is-valid
 .toggle.is-valid + label.form-check-label{
-  color: black;
+  color: $dark-blue;
 }
 
 .form-filters .form-group {
@@ -77,7 +83,7 @@
 .tag-selector + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
   background-color: white;
@@ -158,10 +164,10 @@
 
 
 #snippet_gender_boy + label {
-  color: blue;
+  color: $orange;
 }
 
 #snippet_gender_boy:checked + label {
-  background-color: blue;
-  border-color: blue;
+  background-color: $orange;
+  border-color: $orange;
 }
