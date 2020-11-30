@@ -12,7 +12,12 @@ class ChoicesController < ApplicationController
     @choice.name = Name.find(params[:name_id])
     @choice.accepted = params[:decision] == "accepted"
     @choice.save!
-    redirect_to names_path
+    if @choice.accepted && Choice.find_by(user: current_user.partner, accepted: true , name: @choice.name)
+    #   @match.new
+      redirect_to names_path(match: true)
+    else
+      redirect_to names_path
+    end
   end
 
   def update
