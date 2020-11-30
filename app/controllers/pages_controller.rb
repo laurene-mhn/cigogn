@@ -6,7 +6,13 @@ class PagesController < ApplicationController
 
   def profile
     if params[:code]
-      current_user.update(partner: User.find_by(code: params[:code]))
+      find_user = User.find_by(code: params[:code])
+      current_user.update(partner: find_user)
+      find_user.update(partner: current_user)
+    elsif params[:unmatche]
+      find_user = current_user.partner
+      current_user.update(partner: nil)
+      find_user.update(partner: nil)
     end
   end
 end
