@@ -1,3 +1,9 @@
+.form-check-label{
+  border-color: $orange !important;
+  border-radius: 6px !important;
+  font-size: 16px !important;
+}
+
 .toggle {
   position: right;
   transform: scale(0);
@@ -45,7 +51,7 @@
 }
 // ou input.is-valid
 .toggle.is-valid + label.form-check-label{
-  color: $dark-blue;
+  color: $dark-blue !important;
 }
 
 .form-filters .form-group {
@@ -56,7 +62,7 @@
 // Text align left for label
 
 .size-label {
-    width: 40%;
+  width: 40%;
 }
 
 // Checkboxes designed like pills
@@ -77,7 +83,7 @@
 .tag-selector + label {
   cursor: pointer;
   display: inline-block;
-  font-size: 0.8rem;
+  font-size: 16px;
   border-radius: 50rem;
   padding: 0.1rem 0.5rem;
   background-color: white;
@@ -88,8 +94,9 @@
 }
 
 .tag-selector:checked + label {
-  background-color: $orange;
-  color: white;
+  background-color: $pink;
+  color: $dark-blue;
+  font-weight: bold;
 }
 
 #new_filter > fieldset.form-group.check_boxes.optional.filter_astrology,
@@ -105,7 +112,7 @@
 .gender-wrapper {
   display: flex;
   justify-content: space-between;
-  width:100%;
+  width:50%;
   // flex-wrap: wrap;
 }
 
@@ -119,21 +126,22 @@
 }
 
 .gender-selector + label {
+  text-align: center;
   display: block;
   cursor: pointer;
   box-sizing: border-box;
   width: 100%;
   font-size: 12px;
-  text-align: left;
-  padding: 10px 10px 30px 10px;
+  padding: 0px;
   border: 1px solid #EAEAEA;
   border-radius: 4px;
   background-color: white;
 }
 
 .gender-selector:checked + label {
-  color: white !important;
-  background-color:$orange;
+  color: $dark-blue !important;
+  background-color: $pink;
+  font-weight: bold;
 }
 
 
