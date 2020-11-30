@@ -24,7 +24,7 @@ const swipe = () => {
 
       console.log('Card has been thrown out of the stack.');
       console.log('Throw direction: ' + (event.throwDirection == Swing.Direction.LEFT ? 'left' : 'right'));
-      
+
       if (event.throwDirection == Swing.Direction.LEFT) {
         const decision = document.querySelector("#decline-btn");
         console.log('LEFT', decision);
