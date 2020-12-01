@@ -12,8 +12,9 @@
               checked: 'all',
               collection: ['all', 'boy', 'girl'] %>
 
+  <%= f.input :origin, collection: Filter::ORIGIN, input_html: { multiple: true } %>
 
-  <%= f.input :origin, label:"Origine du prénom",
+  <%#= f.input :origin, label:"Origine du prénom",
               collection: Filter::ORIGIN,
               label_html: { class: "size-label" },
               as: :check_boxes,
@@ -49,10 +50,10 @@
     <%= f.input :end_with, label:"Termine par :", placeholder:"Saisir une syllabe", label_html: { class: "size-label" } %>
 
 
-  <%= f.input :hyphenated_name, label:"Prénom composé", input_html: { class: "toggle size-label" }%>
+  <%#= f.input :hyphenated_name, label:"Prénom composé", input_html: { class: "toggle size-label" }%>
 
   <div class="text-center">
-    <%= f.button :submit, value:"C'est parti!", class: "btn btn-form" %>
+    <%= f.button :submit, value:"C'EST PARTI !", class: "btn btn-form" %>
 
     <%#= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
   </div>
