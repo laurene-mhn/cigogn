@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 import {flip} from "../components/flipcard";
 import {swipe} from "../components/swipe";
+import {closeModal, closeModalTwo} from "../components/close_modal";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,4 +36,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   flip();
   swipe();
+  closeModal();
+  closeModalTwo();
 });
