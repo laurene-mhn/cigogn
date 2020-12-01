@@ -83,7 +83,7 @@
   opacity: 0.33;
 }
 
-.btn-form {
+.btn-match {
   margin-top: 10px;
   background-color: $orange;
   font-size: 20px;
@@ -92,6 +92,17 @@
   border-radius: 20px;
   width: 100%;
   letter-spacing: 2px;
+}
+
+.btn-research {
+  margin-top: 10px;
+  font-size: 19px;
+  font-weight: bold;
+  color: $orange;
+  border-radius: 20px;
+  width: 100%;
+  letter-spacing: 2px;
+  border: 1px solid $orange;
 }
 
 // .btn-form:hover {
