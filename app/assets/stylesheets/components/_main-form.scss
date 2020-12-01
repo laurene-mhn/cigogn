@@ -1,3 +1,13 @@
+// .form-filters label, legend {
+//   font-weight: bold;
+//   padding-top: 0px;
+
+// }
+
+.titles {
+  font-weight: bold;
+}
+
 // 1. GENDER
 
 .gender-wrapper {
@@ -24,7 +34,7 @@
   width: 100%;
   font-size: 16px;
   padding: 15px;
-  border: 1px solid #EAEAEA;
+  border: 1px solid #ced4da;
   border-radius: 4px;
   background-color: white;
 }
@@ -40,9 +50,7 @@
 //   border-radius: 6px !important;
 //   font-size: 16px !important;
 // }
-.select-origin {
-  color:red;
-}
+
 // 2..7 TAGS
 
 // .form-filters .form-group {
@@ -71,7 +79,7 @@
   cursor: pointer;
   display: inline-block;
   font-size: 16px;
-  border-radius: 50rem;
+  border-radius: 4px;
   padding: 0.1rem 0.5rem;
   background-color: white;
   color: $orange;
