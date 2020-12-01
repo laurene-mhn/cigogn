@@ -26,11 +26,20 @@
         </div>
         <div class="flip-card-back <%= @name.gender %>-card">
           <div class="name-back-card"><%= @name.name.upcase %></div>
+            <% if @name.origin.count == 2 %>
+              <p class="text-center"><small>(<%= @name.origin[0] %> - <%= @name.origin[1] %>)</small></p>
+            <% else %>
+              <p class="text-center"><small>(<%= @name.origin[0] %>)</small></p>
+            <% end %>
             <div style="height:50vh;width:100%;font:16px/26px Georgia, Garamond, Serif;overflow:auto;">
               <div class="name-infos">
-                <p><strong>Meaning :</strong> <%= @name.meaning %></p>
-                <p><strong>Origin :</strong> <%= @name.origin.first %></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p><i><%= @name.meaning %></i></p>
+<!--            <p><strong>Meaning:</strong> <%= @name.meaning.class %></p>
+ -->            <p><strong>Origin:</strong> <%= @name.origin[0] %> - <%= @name.origin[1] %></p>
+                <p><%= @name.etymology %></p>
+                <% unless @name.astrology.blank? %>
+                  <p><i class="fab fa-connectdevelop"></i> Signe astro: <strong><%= @name.astrology %></strong></p>
+                <% end %>
               </div>
             </div>
           <div class="back-btn btn-<%= @name.gender %>">
