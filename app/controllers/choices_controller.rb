@@ -14,7 +14,7 @@ class ChoicesController < ApplicationController
     @choice.save!
     if @choice.accepted && Choice.find_by(user: current_user.partner, accepted: true , name: @choice.name)
     #   @match.new
-      redirect_to names_path(match: true)
+      redirect_to names_path(match: @choice.name.name)
     else
       redirect_to names_path
     end

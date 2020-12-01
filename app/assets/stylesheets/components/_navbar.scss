@@ -2,6 +2,7 @@
   justify-content: space-between;
   background: white;
   //box-shadow: 0 2px 4px 0 rgba(0,0,0,0.08);
+  // z-index: 2;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -25,9 +26,9 @@
 }
 .nav-item {
   color: $dark-blue;
-  text-align: center;
+  // text-align: center;
   font-size: 18px;
-  padding: 15px 0px;
+  padding: 15px;
   border-bottom: 1px solid rgba(0,0,0,0.1);
 }
 .nav-item a {
@@ -38,6 +39,11 @@
   color: $orange;
   text-decoration: none;
   font-weight: bold;
+}
+
+.nav-item i {
+  margin-right: 15px;
+  font-size: 22px;
 }
 
 .navbar.navbar-4 .navbar-toggler-icon {

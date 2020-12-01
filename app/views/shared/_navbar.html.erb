@@ -3,40 +3,48 @@
     <%= image_tag "logo.png" %>
     <% end %>
   <div class="text-logo">Cigogn</div>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav text-center">
-      <% if user_signed_in? %>
+   <% if user_signed_in? %>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav text-center">
         <li class="nav-item">
-          <%#= profile_path%>
-          <%= link_to "Profile", root_path %>
+          <%= link_to profile_path do %>
+            <i class="far fa-user"></i>Profile
+          <% end %>
         </li>
 
         <li class="nav-item">
-          <%= link_to "Prénoms favoris", choices_path %>
+          <%= link_to choices_path do  %>
+            <i class="far fa-heart"></i>Prénoms favoris
+          <% end %>
         </li>
 
         <li class="nav-item">
-          <%= link_to "Nos matchs", choices_path %>
+          <%= link_to matches_path do %>
+            <i class="far fa-star"></i>Nos matchs
+          <% end %>
         </li>
 
         <li class="nav-item">
-          <%= link_to "Préférences", new_filter_path %>
+          <%= link_to new_filter_path do  %>
+            <i class="fas fa-sliders-h"></i>Préférences
+          <% end %>
         </li>
 
         <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+          <%= link_to destroy_user_session_path, method: :delete do  %>
+            <i class="fas fa-sign-out-alt"></i>Se déconnecter
+          <% end %>
         </li>
+      </ul>
+    </div>
 
-        <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-        <% end %>
-    </ul>
-  </div>
+  <% else %>
+      <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+  <% end %>
+
 </div>
