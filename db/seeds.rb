@@ -18,10 +18,10 @@ def no_accent(string)
 end
 
 puts "Destroying previous data"
-# User.destroy_all
+User.destroy_all
 Name.destroy_all
-# Choice.destroy_all
-# Filter.destroy_all
+Choice.destroy_all
+Filter.destroy_all
 
 puts "Finished Destroy"
 
