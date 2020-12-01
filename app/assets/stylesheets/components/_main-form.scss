@@ -6,8 +6,9 @@
 
 .titles {
   font-weight: bold;
+  margin-top: 10px;
+  font-size: 18px;
 }
-
 // 1. GENDER
 
 .gender-wrapper {
@@ -40,8 +41,8 @@
 }
 
 .gender-selector:checked + label {
-  color: white !important;
-  background-color: $dark-blue;
+  color: $dark-blue !important;
+  background-color: $pink;
   font-weight: bold;
 }
 
@@ -76,16 +77,16 @@
 }
 
 .tag-selector + label {
-  cursor: pointer;
+  //cursor: pointer;
   display: inline-block;
   font-size: 16px;
   border-radius: 4px;
-  padding: 0.1rem 0.5rem;
+  padding: 1rem 1rem;
   background-color: white;
-  color: $orange;
-  border: 1px solid $orange;
-  margin-right: 0.6rem;
-  margin-bottom: 0.4rem;
+  color: $dark-blue;
+  border: 1px solid #ced4da;
+  margin-right: 0.8rem;
+  margin-bottom: 0.8rem;
 }
 
 .tag-selector:checked + label {

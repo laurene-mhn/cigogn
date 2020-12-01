@@ -50,11 +50,11 @@
   <%#= more filters %>
 
   <%= f.input :astrology,label:"Signe astrologique",
-                label_html:{ class: "titles"},
-                collection: Filter::ASTROLOGY,
-                as: :check_boxes,
-                input_html: { class: "tag-selector" },
-                item_wrapper_class: 'tag-item' %>
+              label_html:{ class: "titles"},
+              collection: Filter::ASTROLOGY,
+              as: :check_boxes,
+              input_html: { class: "tag-selector" },
+              item_wrapper_class: 'tag-item' %>
 
 
     <%= f.input :start_with, label:"Commence par",
