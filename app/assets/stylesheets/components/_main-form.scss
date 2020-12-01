@@ -1,4 +1,5 @@
 // 1. GENDER
+
 .gender-wrapper {
   display: flex;
   justify-content: space-between;
@@ -22,7 +23,7 @@
   box-sizing: border-box;
   width: 100%;
   font-size: 16px;
-  padding: 20px;
+  padding: 15px;
   border: 1px solid #EAEAEA;
   border-radius: 4px;
   background-color: white;
@@ -39,7 +40,9 @@
 //   border-radius: 6px !important;
 //   font-size: 16px !important;
 // }
-
+.select-origin {
+  color:red;
+}
 // 2..7 TAGS
 
 // .form-filters .form-group {

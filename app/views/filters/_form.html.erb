@@ -9,10 +9,16 @@
               collection_wrapper_class: 'gender-wrapper',
               item_wrapper_class: 'gender-item',
               input_html: {class: 'gender-selector'},
-              checked: 'all',
-              collection: ['all', 'boy', 'girl'] %>
+              checked: 'tous',
+              :collection =>{
+                '<div class="icons-gender"><i class="fas fa-venus-mars"></i><p>Tous</p></div>'.html_safe => 'tous',
+                '<div class="icons-gender"><i class="fas fa-mars"></i><p>Garçon</p></div>'.html_safe => 'garçon',
+                '<div class="icons-gender"><i class="fas fa-venus"></i><p>Fille</p></div>'.html_safe => 'fille' } %>
 
-  <%= f.input :origin, collection: Filter::ORIGIN, input_html: { multiple: true } %>
+
+  <%= f.input :origin,
+              label:"Origine",collection: Filter::ORIGIN,
+              input_html: { multiple: true, class: 'select-origin' } %>
 
   <%#= f.input :origin, label:"Origine du prénom",
               collection: Filter::ORIGIN,
