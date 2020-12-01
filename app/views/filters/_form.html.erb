@@ -9,11 +9,18 @@
               collection_wrapper_class: 'gender-wrapper',
               item_wrapper_class: 'gender-item',
               input_html: {class: 'gender-selector'},
-              checked: 'all',
-              collection: ['all', 'boy', 'girl'] %>
+              checked: 'tous',
+              :collection =>{
+                '<div class="icons-gender"><i class="fas fa-venus-mars"></i><p>Tous</p></div>'.html_safe => 'tous',
+                '<div class="icons-gender"><i class="fas fa-mars"></i><p>Garçon</p></div>'.html_safe => 'garçon',
+                '<div class="icons-gender"><i class="fas fa-venus"></i><p>Fille</p></div>'.html_safe => 'fille' } %>
 
 
-  <%= f.input :origin, label:"Origine du prénom",
+  <%= f.input :origin,
+              label_html:{ class: "titles"},
+              label:"Origine", collection: Filter::ORIGIN,
+              input_html: { multiple: true } %>
+  <%#= f.input :origin, label:"Origine du prénom",
               collection: Filter::ORIGIN,
               label_html: { class: "size-label" },
               as: :check_boxes,
@@ -21,15 +28,20 @@
               item_wrapper_class: 'tag-item' %>
 
   <%= f.input :popularity, label:"Popularité",
+              label_html:{ class: "titles"},
+              collection: Filter::POPULARITY,
+              as: :range %>
+  <%#= f.input :popularity, label:"Popularité",
               collection: Filter::POPULARITY,
               as: :check_boxes,
               input_html: { class: "tag-selector" },
               item_wrapper_class: 'tag-item' %>
 
-
-  <%#= f.input :length, collection: Filter::LENGTH, label_html: { class: "size-label" }%>
-
   <%= f.input :length,label:"Taille du prénom",
+              label_html:{ class: "titles"},
+               as: :range %>
+  <%#= f.input :length, collection: Filter::LENGTH, label_html: { class: "size-label" }%>
+  <%#= f.input :length,label:"Taille du prénom",
               collection: Filter::LENGTH,
               as: :check_boxes,
               input_html: { class: "tag-selector" },
@@ -38,21 +50,27 @@
   <%#= more filters %>
 
   <%= f.input :astrology,label:"Signe astrologique",
-                collection: Filter::ASTROLOGY,
-                as: :check_boxes,
-                input_html: { class: "tag-selector" },
-                item_wrapper_class: 'tag-item' %>
+              label_html:{ class: "titles"},
+              collection: Filter::ASTROLOGY,
+              as: :check_boxes,
+              input_html: { class: "tag-selector" },
+              item_wrapper_class: 'tag-item' %>
 
 
-    <%= f.input :start_with, label:"Commence par :", placeholder:"Saisir la première lettre", label_html: { class: "size-label" } %>
+    <%= f.input :start_with, label:"Commence par",
+                 placeholder:"Saisir la première lettre",
+                  label_html: { class: "titles" } %>
 
-    <%= f.input :end_with, label:"Termine par :", placeholder:"Saisir une syllabe", label_html: { class: "size-label" } %>
+    <%= f.input :end_with,
+                label:"Termine par",
+                placeholder:"Saisir une syllabe",
+                label_html: { class: "titles" } %>
 
 
-  <%= f.input :hyphenated_name, label:"Prénom composé", input_html: { class: "toggle size-label" }%>
+  <%#= f.input :hyphenated_name, label:"Prénom composé", input_html: { class: "toggle size-label" }%>
 
   <div class="text-center">
-    <%= f.button :submit, value:"C'est parti!", class: "btn btn-form" %>
+    <%= f.button :submit, value:"C'EST PARTI !", class: "btn btn-form" %>
 
     <%#= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
   </div>
