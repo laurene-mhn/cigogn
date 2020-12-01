@@ -1,10 +1,24 @@
 <div class="container">
   <% if current_user.partner.present? %>
-    <div>
-      <%= cl_image_tag current_user.partner.photo.key, class: "avatar-profile" %>
+    <div class="avatar-position mb-2">
+      <%= cl_image_tag current_user.photo.key, class: "avatar-profile avatar-left" if current_user.photo.present? %>
+      <%= cl_image_tag current_user.partner.photo.key, class: "avatar-profile avatar-right" if current_user.partner.photo.present? %>
     </div>
     <div class="text-center">
+      Vous êtes partenaire avec
+    </div>
+    <div class="name-profile">
       <%= current_user.partner.first_name %> <%= current_user.partner.last_name %>
+    </div>
+    <div>
+      <form method="get" action="<%= profile_path %>">
+        <div class="form-group">
+          <label for="inputCode"></label>
+          <input name="code" class="form-control" id="inputCode" value="<%= current_user.partner.code %>">
+        </div>
+        <button type="submit" class="btn btn-form">Réinitialiser</button>
+        <small id="emailHelp" class="form-text mt-2">Ajouter le code de votre partenaire pour pouvoir matcher sur des prénoms</small>
+      </form>
     </div>
 
   <% else %>

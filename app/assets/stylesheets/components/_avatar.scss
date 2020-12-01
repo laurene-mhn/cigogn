@@ -24,6 +24,7 @@
 .avatar-profile {
   display: block;
   margin-top: 8px;
+  margin-bottom: 8px;
   margin-left: auto;
   margin-right: auto;
   width: 170px;
@@ -31,3 +32,34 @@
   object-fit: cover;
   border-radius: 50%;
 }
+
+.avatar-profile-partner {
+  display: block;
+  margin-top: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.avatar-position {
+  width: 270px;
+  height: 270px;
+  margin: auto;
+  position: relative;
+}
+
+.avatar-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.avatar-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
