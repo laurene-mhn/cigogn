@@ -6,7 +6,6 @@
   width: 100%;
   margin-top: 5%;
   padding: 5%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   border-radius: 7px;
   offset-multiplier: 4px;
 }
@@ -19,10 +18,11 @@
 
 .fav-actions {
   display: flex;
+  color: black;
 }
 
 .fav-actions i {
-  color: black;
+  color: $form-gray;
 }
 
 .boy-fav-cards {
