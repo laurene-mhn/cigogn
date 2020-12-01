@@ -1,10 +1,10 @@
 class Filter < ApplicationRecord
   belongs_to :user
-  GENDER = ["girl", "boy", "unisex"]
-  ORIGIN = ["french", "english", "hebrew", "latin"]
-  ASTROLOGY = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"]
-  LENGTH = ["short 0-5ch", "medium 6-9ch", "long 10ch & more"]
-  POPULARITY = ["rare", "common", "popular"]
+  GENDER = Name::GENDER
+  ORIGIN = Name::ORIGIN
+  ASTROLOGY = Name::ASTROLOGY
+  LENGTH = ["court 0-5car", "moyen 6-9car", "long 10car & plus"]
+  POPULARITY = Name::POPULARITY
   # validates :gender, inclusion: { in: GENDER }
   # validates :origin, inclusion: { in: ORIGIN }
   # validates :astrology, inclusion: { in: ASTROLOGY }
@@ -19,3 +19,4 @@ class Filter < ApplicationRecord
   validates_intersection_of :popularity, in: POPULARITY, message: "invalid permission"
   validates_intersection_of :popularity, within: POPULARITY, message: "invalid permission"
 end
+
