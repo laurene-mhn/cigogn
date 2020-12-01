@@ -9,10 +9,12 @@ class PagesController < ApplicationController
       find_user = User.find_by(code: params[:code])
       current_user.update(partner: find_user)
       find_user.update(partner: current_user)
+      redirect_to profile_path
     elsif params[:unmatche]
       find_user = current_user.partner
       current_user.update(partner: nil)
       find_user.update(partner: nil)
+      redirect_to profile_path
     end
   end
 end
