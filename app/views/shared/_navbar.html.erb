@@ -8,23 +8,30 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <ul class="navbar-nav text-center">
       <% if user_signed_in? %>
+
         <li class="nav-item">
-          <%= link_to "My profile", root_path, class: "nav-item" %>
+          <%#= profile_path%>
+          <%= link_to "Profile", root_path %>
         </li>
+
         <li class="nav-item">
-          <%= link_to "Favorite names", choices_path, class: "nav-item" %>
+          <%= link_to "Prénoms favoris", choices_path %>
         </li>
+
         <li class="nav-item">
-          <%= link_to "My matches", choices_path, class: "nav-item" %>
+          <%= link_to "Nos matchs", choices_path %>
         </li>
+
         <li class="nav-item">
-          <%= link_to "Settings", new_filter_path, class: "nav-item" %>
+          <%= link_to "Préférences", new_filter_path %>
         </li>
+
         <li class="nav-item">
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
         </li>
+
         <% else %>
         <li class="nav-item">
           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
