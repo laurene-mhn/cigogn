@@ -4,3 +4,16 @@ h3 {
   font-size: 25px;
   color: $dark-blue;
 }
+
+// Text design on the profil page
+.name-profile {
+  font-size: 20px !important;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+}
+
+#emailHelp{
+  color: $form-gray;
+  text-align: center;
+}

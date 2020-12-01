@@ -173,3 +173,14 @@
   background-color: $orange;
   border-color: $orange;
 }
+
+// profile form selector
+#inputCode {
+  background-color: $gray;
+  color: $form-gray !important;
+  width: 100%;
+  height: 63px;
+  border-radius: 15px;
+  font-size: 16px;
+  border: none;
+}
