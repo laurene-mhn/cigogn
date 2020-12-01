@@ -1,37 +1,24 @@
 <div class="container" my-3>
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-    <br>
-    <h3>Favorites names</h3>
-    <hr>
-    <% if @choices_accepted.nil? %>
-      <p>You have no favorite names now. Please swipe !</p>
-    <% else %>
-      <% @choices_accepted.each do |choice| %>
-      <div class="fav-cards <%= choice.name.gender %>-fav-cards">
-        <div class="fav-content">
-          <%= choice.name.name.capitalize %>
-        </div>
-        <%= link_to choice_path(choice), method: :put do  %>
-          <div class="fav-actions">
-            <i class="far fa-trash-alt"></i>
-          </div>
-        <% end %>
+  <div>
+  <br>
+  <h3><i class="far fa-heart"></i> Prénoms favoris</h3>
+  <hr>
+  <% if @choices_accepted.nil? %>
+    <p>You have no favorite names now. Please swipe !</p>
+  <% else %>
+    <% @choices_accepted.each do |choice| %>
+    <div class="fav-cards <%= choice.name.gender %>-fav-cards">
+      <div class="fav-content">
+        <%= choice.name.name.capitalize %>
       </div>
+      <%= link_to choice_path(choice), method: :put do  %>
+        <div class="fav-actions">
+          <i class="far fa-star"></i> 
+          <i class="far fa-trash-alt"></i>
+        </div>
       <% end %>
+    </div>
     <% end %>
-    </div>
-
-
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <ul>
-        <% @choices_declined.each do |choice| %>
-          <li><%= choice.name.name %> </li>
-        <% end %>
-      </ul>
-    </div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-      <p>To be designed</p>
-    </div>
+  <% end %>
   </div>
 </div>

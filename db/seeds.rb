@@ -39,6 +39,21 @@ user4 = User.new(email: 'chris@cigogn.fr', password: '123456', password_confirma
       user4.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
       user4.save
 
+user5 = User.new(email: 'audrey@cigogn.fr', password: '123456', password_confirmation: '123456', first_name: "Audrey", last_name: "Durand")
+      file = URI.open('https://fr.web.img5.acsta.net/pictures/18/05/23/12/21/2019891.jpg')
+      user5.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+      user5.save
+
+user6 = User.new(email: 'margot@cigogn.fr', password: '123456', password_confirmation: '123456', first_name: "Margot", last_name: "Durand")
+      file = URI.open('https://img-3.journaldesfemmes.fr/GvitGLnrNjtLlbTea6uSGBXQFZM=/600x/smart/88cac8edbab148e786494d8cfb3271d0/ccmcms-jdf/11292435.jpg')
+      user6.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+      user6.save
+
+user7 = User.new(email: 'george@cigogn.fr', password: '123456', password_confirmation: '123456', first_name: "George", last_name: "Durand")
+      file = URI.open('https://cache.marieclaire.fr/data/photo/w308_c17/7d8c16c1b1baureau.jpg')
+      user7.photo.attach(io: file, filename: 'nes.jpg', content_type: 'image/jpg')
+      user7.save
+
 puts "Finished"
 
 puts "Creating names"

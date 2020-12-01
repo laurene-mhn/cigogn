@@ -16,7 +16,8 @@
           <label for="inputCode"></label>
           <input name="code" class="form-control" id="inputCode" value="<%= current_user.partner.code %>">
         </div>
-        <button type="submit" class="btn btn-form">Réinitialiser</button>
+        <%# <button type="submit" class="btn btn-form">Réinitialiser</button> %>
+        <%= link_to "Réinitialiser", profile_path(unmatche: ""), class: "btn btn-form" %>
         <small id="emailHelp" class="form-text mt-2">Ajouter le code de votre partenaire pour pouvoir matcher sur des prénoms</small>
       </form>
     </div>
