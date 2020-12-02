@@ -1,11 +1,19 @@
 // Design titles
 h3 {
   text-align: center;
-  font-size: 25px;
-  color: $dark-blue;
+  font-size: 22px;
+  font-weight: bold;
+  color: $orange;
 }
 
 // Text design on the profil page
+.my-name-profile {
+  font-size: 25px !important;
+  color: $orange;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 10px;
+}
 .name-profile {
   font-size: 20px !important;
   font-weight: bold;
