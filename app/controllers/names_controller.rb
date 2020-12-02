@@ -12,7 +12,7 @@ class NamesController < ApplicationController
         names = names.where("origin && ARRAY[?]::varchar[]", filter.origin)
       end
       # Fonctionne UNIQUEMENT sur un des filtres
-      if filter.length.any? || filter.length != ["court 0-5car", "long 10car & plus"]
+      if filter.length.any?
         case filter.length
         when ["court 0-5car"]
           names = names.select{ |name| name.name.length >= 0 && name.name.length <= 5 }
