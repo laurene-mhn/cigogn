@@ -12,40 +12,44 @@ class NamesController < ApplicationController
         names = names.where("origin && ARRAY[?]::varchar[]", filter.origin)
       end
       # Fonctionne UNIQUEMENT sur un des filtres
-      # if filter.length.any?
-      #   case filter.length
-      #   when ["court 0-5car"]
-      #     names = names.select{ |name| name.name.length >= 0 && name.name.length <= 5 }
-      #   when ["moyen 6-9car"]
-      #     names = names.select{ |name| name.name.length >= 6 && name.name.length <= 9 }
-      #   when ["long 10car & plus"]
-      #     names = names.select{ |name| name.name.length >= 10 }
-      #   when ["court 0-5car", "moyen 6-9car"]
-      #     names = names.select{ |name| name.name.length >= 0 && name.name.length <= 9 }
-      #   when ["moyen 6-9car", "long 10car & plus"]
-      #     names = names.select{ |name| name.name.length >= 6}
-      #   when ["court 0-5car", "long 10car & plus"]
-      #     names = names.select{ |name| name.name.length >= 10 || name.name.length <= 5 }
-      #   when ["court 0-5car","moyen 6-9car", "long 10car & plus"]
-      #     names = names.select{ |name| name.name.length >= 0}
-      #   end
-      # end
-      # if filter.popularity.any?
-      #   names = names.where('popularity IN (?)', filter.popularity)
-      # end
-      # if filter.astrology.any?
-      #   names = names.where('astrology IN (?)', filter.astrology)
-      # end
-      # if filter.start_with.any?
-      #   names = names.select { |name| name.name.start_with? filter.start_with.capitalize }
-      # end
-      # if filter.end_with.any?
-      #   names = names.select { |name| name.name.end_with? filter.end_with.capitalize }
-      # end
+      if filter.length.any? && filter.length!= ["court 0-5car","moyen 6-9car", "long 10car & plus"]
+        case filter.length
+        when ["court 0-5car"]
+          names = names.where("char_length(name) < ?", 6)
+        when ["moyen 6-9car"]
+          names = names.where("char_length(name) > ? AND char_length(name) < ?", 5, 10)
+        when ["long 10car & plus"]
+          names = names.where("char_length(name) > ?", 9)
+        when ["court 0-5car", "moyen 6-9car"]
+          names = names.where("char_length(name) < ?", 10)
+        when ["moyen 6-9car", "long 10car & plus"]
+          names = names.where("char_length(name) > ?", 5)
+        when ["court 0-5car", "long 10car & plus"]
+          names = names.where.not("char_length(name) > ? AND char_length(name) < ?", 5, 10)
+        end
+      end
+
+# Project.where("manager_user_id = ? OR account_manager = ?", current_user.id, current_user.id)
+# Project.where("manager_user_id = '#{current_user.id}' or account_manager_id = '#{current_user.id}'")
+
+      if filter.popularity.any?
+        names = names.where('popularity IN (?)', filter.popularity)
+      end
+      if filter.astrology.any?
+        names = names.where('astrology IN (?)', filter.astrology)
+      end
+      if !filter.start_with.blank?
+        names = names.where("name LIKE :prefix", prefix: "#{filter.start_with.capitalize}%")
+      end
+      if !filter.end_with.blank?
+        names = names.where("name LIKE :sufix", sufix: "%#{filter.end_with.downcase}")
+      end
       # if filter.hyphenated_name == true
       #   names = names.where("name like ?", "%-%")
       # end
     end
+
+
 
     # autant de ligne que de filtres
     names = names.reorder(Arel.sql("RANDOM()"))
