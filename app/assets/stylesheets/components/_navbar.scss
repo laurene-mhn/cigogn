@@ -13,6 +13,7 @@
   transform: translateX(0%);
   transition: transform 0.3s ease;
   height: calc(100vh - 66px) !important;
+  margin-top: auto;
 }
 
 .collapse:not(.show) {
