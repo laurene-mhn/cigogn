@@ -47,7 +47,6 @@ class NamesController < ApplicationController
       end
     end
 
-    # names = names.where(origin: "french")
     # autant de ligne que de filtres
     names = names.reorder(Arel.sql("RANDOM()"))
     @name = names.first
