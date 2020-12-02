@@ -60,8 +60,7 @@
               <div class="name-infos">
                 <p><i><%= @name.meaning %></i></p>
                 <%# <p><strong>Origin:</strong> = @name.origin[0] - = @name.origin[1]</p> %>
-<!--            <p><strong>Meaning:</strong> <%= @name.meaning.class %></p>
- -->            <% unless @name.etymology.blank? %>
+                <% unless @name.etymology.blank? %>
                   <p><strong><i class="fas fa-book fa-fw"> </i>  Étymologie : </strong><%= @name.etymology %></p>
                 <% end %>
                 <% unless @name.popularity.blank? %>
