@@ -7,14 +7,21 @@
     <div class="fav-cards <%= choice.name.gender %>-fav-cards">
       <div class="fav-content">
         <%= choice.name.name.capitalize %>
+        <% if choice.accepted && Choice.find_by(user: current_user.partner, accepted: true , name:choice.name) %>
+          <i class="fas fa-star"></i>
+        <% end %>
       </div>
+
       <%= link_to choice_path(choice), method: :put do  %>
         <div class="fav-actions">
-          <i class="far fa-star"></i> 
+
+
           <i class="far fa-trash-alt"></i>
         </div>
       <% end %>
     </div>
   <% end %>
+  </div>
+  <div class="footer-names"><%= link_to 'Plus de swipe', names_path, class: 'btn btn-form' %>
   </div>
 </div>

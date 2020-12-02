@@ -16,6 +16,12 @@
   font-size: x-large;
 }
 
+.fav-content i {
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 8px;
+}
+
 .fav-actions {
   display: flex;
   color: black;
@@ -25,11 +31,11 @@
   color: $form-gray;
 }
 
-.boy-fav-cards {
+.garçon-fav-cards {
   background-color: $blue;
 }
 
-.girl-fav-cards {
+.fille-fav-cards {
   background-color: $pink;
 }
 
