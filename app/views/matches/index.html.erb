@@ -7,8 +7,11 @@
   <div class="fav-cards <%= match.name.gender %>-fav-cards">
     <div class="fav-content">
       <%= match.name.name.capitalize %>
+      <i class="fas fa-star"></i>
     </div>
   </div>
   <% end %>
+  </div>
+  <div class="footer-names"><%= link_to 'Plus de swipe', names_path, class: 'btn btn-form' %>
   </div>
 </div>

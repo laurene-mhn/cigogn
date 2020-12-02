@@ -41,6 +41,10 @@
     font-size: 22px;
   }
 }
+#decline-btn:hover,
+#accept-btn:hover {
+  text-decoration: none !important;
+}
 
 .circle-btn-like > i {
   color: $green;
