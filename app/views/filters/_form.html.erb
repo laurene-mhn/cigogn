@@ -27,21 +27,21 @@
               input_html: { class: "tag-selector" },
               item_wrapper_class: 'tag-item' %>
 
-  <%= f.input :popularity, label:"Popularité",
+  <%#= f.input :popularity, label:"Popularité",
               label_html:{ class: "titles"},
               collection: Filter::POPULARITY,
               as: :range %>
-  <%#= f.input :popularity, label:"Popularité",
+  <%= f.input :popularity, label:"Popularité",
               collection: Filter::POPULARITY,
               as: :check_boxes,
               input_html: { class: "tag-selector" },
               item_wrapper_class: 'tag-item' %>
 
-  <%= f.input :length,label:"Taille du prénom",
+  <%#= f.input :length,label:"Taille du prénom",
               label_html:{ class: "titles"},
                as: :range %>
   <%#= f.input :length, collection: Filter::LENGTH, label_html: { class: "size-label" }%>
-  <%#= f.input :length,label:"Taille du prénom",
+  <%= f.input :length,label:"Taille du prénom",
               collection: Filter::LENGTH,
               as: :check_boxes,
               input_html: { class: "tag-selector" },
