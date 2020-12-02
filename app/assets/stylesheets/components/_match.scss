@@ -1,13 +1,15 @@
 .show {
   display: block;
   margin-top: 17%;
-  background-color: rgba(92, 91, 91, 0.8);
+  //background-color: rgba(92, 91, 91, 0.8);
+  background-color:white;
 }
 
 .modal-content {
   height: 85vh;
   border-radius: 7px;
-  border: none;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+  //border: 0.5px solid $form-gray;
   margin-top: 20px;
 }
 
