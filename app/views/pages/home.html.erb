@@ -2,22 +2,5 @@
 <p>Find me in app/views/pages/home.html.erb</p> %>
 
 <div class="container">
-  <div class="out-container">
-    <div class="out-card">
-      <div class="out-text">
-        <div class="text-details">
-          <i class="far fa-laugh-wink"></i><p>Congrats! You've already seen <strong>all the names</strong> matching to your criterias.</p>
-        </div>
-        <div class="text-details">
-          <i class="fas fa-cogs"></i><p>If you haven't found the one yet, no worries, <strong>reset filters</strong> and the stork will bring you new name ideas!</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="out-btn">
-    <%= link_to 'Reset filters', new_filter_path, class: 'btn btn-form' %>
-    <div class="out-list-btn">
-      <i class="far fa-eye"></i>View match names
-    </div>
-  </div>
+  <%= image_tag "cigognewbaby.png", class:"logo-home" %>
 </div>

@@ -15,6 +15,18 @@ class FiltersController < ApplicationController
     end
   end
 
+  def edit
+    @filter = Filter.find(params[:id])
+    authorize @filter
+  end
+
+  def update
+    @filter = Filter.find(params[:id])
+    @filter.update(filter_params)
+    authorize @filter
+    redirect_to names_path
+  end
+
   private
 
   def filter_params

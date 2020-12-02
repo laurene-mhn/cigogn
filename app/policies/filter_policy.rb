@@ -12,4 +12,12 @@ class FilterPolicy < ApplicationPolicy
   def new?
     create?
   end
+
+  def edit?
+    update?
+  end
+
+  def update?
+    record.user == user
+  end
 end
