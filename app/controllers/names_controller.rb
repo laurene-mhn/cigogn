@@ -29,9 +29,6 @@ class NamesController < ApplicationController
         end
       end
 
-# Project.where("manager_user_id = ? OR account_manager = ?", current_user.id, current_user.id)
-# Project.where("manager_user_id = '#{current_user.id}' or account_manager_id = '#{current_user.id}'")
-
       if filter.popularity.any?
         names = names.where('popularity IN (?)', filter.popularity)
       end
