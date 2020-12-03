@@ -10,11 +10,15 @@
   letter-spacing: 2px;
 }
 
-// .btn-form:hover {
-//   background-color: white;
-//   border-color: $orange;
-//   color: $orange;
-// }
+.btn-research {
+  margin-top: 10px;
+  font-size: 19px;
+  color: $orange;
+  border-radius: 20px;
+  width: 100%;
+  letter-spacing: 1px;
+  border: 1px solid $orange;
+}
 
 .buttons-container {
   display: flex;
@@ -54,9 +58,6 @@
   color: $red;
 }
 
-// .infos-btn {
-//   background-color: $dark-yellow;
-// }
 .infos-btn {
   display: flex;
   position: absolute;
@@ -116,26 +117,7 @@
   letter-spacing: 2px;
 }
 
-.btn-research {
-  margin-top: 10px;
-  font-size: 19px;
-  font-weight: bold;
-  color: $orange;
-  border-radius: 20px;
-  width: 100%;
-  letter-spacing: 2px;
-  border: 1px solid $orange;
-}
-
-// .btn-form:hover {
-//   background-color: white;
-//   border-color: $orange;
-//   color: $orange;
-// }
-
-
 .shared_links a {
   color: gray !important;
   font-size: 12px;
-
 }

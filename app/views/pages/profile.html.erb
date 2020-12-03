@@ -16,11 +16,6 @@
     </div>
     <div>
       <form method="get" action="<%= profile_path %>">
-        <!-- <div class="form-group">
-          <label for="inputCode"></label>
-          <input name="code" class="form-control" id="inputCode" value="<%= current_user.partner.code %>">
-        </div>
- -->        <%# <button type="submit" class="btn btn-form">Réinitialiser</button> %>
       <br>
         <% if current_user.filter %>
             <%= link_to "Filtrer des prénoms", edit_filter_path(current_user.filter), class: "btn btn-form" %>
@@ -29,12 +24,6 @@
           <% end %>
         <div class="footer-names text-center"><%= link_to "Réinitialiser", profile_path(unmatche: "") %>
         </div>
-
-        <!-- <div class="text-center my-4">
-          <%= link_to "Réinitialiser", profile_path(unmatche: "") %>
-        </div> -->
-
-        <!-- <small id="emailHelp" class="form-text mt-2">Ajouter le code de votre partenaire pour pouvoir matcher sur des prénoms</small> -->
       </form>
     </div>
 
@@ -45,17 +34,19 @@
     <div class="my-name-profile">
       <%= current_user.first_name %> <%= current_user.last_name.upcase %>
     </div>
-    <div class="text-center">
+    <div class="text-center groupe-info">
+      <small>Code personnel à partager :</small>
+      <br>
       <%= current_user.code %>
     </div>
     <div>
       <form method="get" action="<%= profile_path %>">
-        <div class="form-group">
+        <div class="form-group text-center">
           <label for="inputCode"></label>
           <input name="code" class="form-control" id="inputCode" placeholder="Saisir code du partenaire">
         </div>
         <button type="submit" class="btn btn-form">Ajouter partenaire</button>
-        <small id="emailHelp" class="form-text mt-2">Ajouter le code de votre partenaire pour pouvoir matcher sur des prénoms</small>
+        <small id="emailHelp" class="form-text mt-3">Ajouter le code de votre partenaire pour matcher des prénoms.</small>
       </form>
     </div>
   <% end %>

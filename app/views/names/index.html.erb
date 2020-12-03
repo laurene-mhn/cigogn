@@ -1,32 +1,31 @@
-<%# <div class="container"> %>
-  <%# <p>= @name.name</p> %>
-  <%#= link_to "accepted", choices_path(name_id: @name.id, decision: "accepted"), method: :post %>
-  <%#= link_to "declined", choices_path(name_id: @name.id, decision: "declined"), method: :post %>
-<%# </div> %>
-
 <div class="full-screen">
   <% if params[:match] %>
     <div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
-            </button>
-            <p> Félicitations ! Cigogn a ajouté un prénom à votre liste de matchs !</p>
-            <div class="card-category">
-              <%= image_tag "namedeco.png", class: "nameimage" %>
-              <div class="name-disclaim"><%= params[:match].capitalize %></div>
+          </button>
+          <div class="modal-body">
+            <div class="avatar-position mb-2">
+              <%= cl_image_tag current_user.photo.key, class: "avatar-profile avatar-left" if current_user.photo.present? %>
+              <%= cl_image_tag current_user.partner.photo.key, class: "avatar-profile avatar-right" if current_user.partner.photo.present? %>
+            </div>
+            <div class="match">
+              <p> Vous avez un match !</p>
+            </div>
+            <div class="both-like">
+              <p> <%= current_user.partner.first_name %> aime aussi le prénom :</p>
             </div>
           </div>
-          <div class="modal-footer">
-          <%= link_to 'Voir les matchs', matches_path, class: "btn btn-match" %>
-            <button type="button" class="btn btn-research">Continuer la recherche</button>
+        <div class="card-category"><%= image_tag "namedeco.png", class: "nameimage" %>
+          <div class="name-disclaim"><%= params[:match].capitalize %>
           </div>
         </div>
       </div>
     </div>
   <% end %>
+</div>
 
   <div class="cards-container">
     <div class="name-cards flip-card">

@@ -16,5 +16,6 @@ class User < ApplicationRecord
 
   def generate_code
     self.code = SecureRandom.alphanumeric
+    # self.code = SecureRandom.alphanumeric(4)
   end
 end
