@@ -17,6 +17,24 @@ const swipe = () => {
       stack.createCard(targetElement);
     });
 
+    stack.on('dragend' , (event) => {
+      console.log(window.event.screenX);
+      if (window.event.screenX >= 285) {
+        const decision = document.querySelector("#accept-btn");
+        console.log('RIGHT', decision);
+        namecards.style.opacity = 0
+        stack.getCard(namecards).destroy();
+        decision.click()
+      }
+      if (window.event.screenX <= 105) {
+        const decision = document.querySelector("#decline-btn");
+        console.log('LEFT', decision);
+        namecards.style.opacity = 0
+        stack.getCard(namecards).destroy();
+        decision.click()
+      }
+    });
+
     // Add event listener for when a card is thrown out of the stack.
     stack.on('throwout', (event) => {
       // e.target Reference to the element that has been thrown out of the stack.
@@ -24,6 +42,7 @@ const swipe = () => {
 
       console.log('Card has been thrown out of the stack.');
       console.log('Throw direction: ' + (event.throwDirection == Swing.Direction.LEFT ? 'left' : 'right'));
+      console.log(event)
 
       if (event.throwDirection == Swing.Direction.LEFT) {
         const decision = document.querySelector("#decline-btn");
