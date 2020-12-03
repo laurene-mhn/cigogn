@@ -3,7 +3,7 @@ class Filter < ApplicationRecord
   GENDER = Name::GENDER
   ORIGIN = Name::ORIGIN
   ASTROLOGY = Name::ASTROLOGY
-  LENGTH = ["court 0-5car", "moyen 6-9car", "long 10car & plus"]
+  LENGTH = ["Court", "Moyen", "Long"]
   POPULARITY = Name::POPULARITY
   # validates :gender, inclusion: { in: GENDER }
   # validates :origin, inclusion: { in: ORIGIN }
@@ -19,4 +19,5 @@ class Filter < ApplicationRecord
   validates_intersection_of :popularity, in: POPULARITY, message: "invalid permission"
   validates_intersection_of :popularity, within: POPULARITY, message: "invalid permission"
 end
+
 
