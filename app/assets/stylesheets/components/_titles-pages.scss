@@ -6,6 +6,19 @@ h3 {
   color: $orange;
 }
 
+// .group-info {
+//   border: 0.5px solid $form-gray;
+//   border-radius: 4px;
+//   padding: 5px;
+// }
+.groupe-info small {
+  font-weight: bold;
+}
+
+.text-center input {
+  text-align: center;
+}
+
 // Text design on the profil page
 .my-name-profile {
   font-size: 25px !important;
