@@ -18,15 +18,14 @@
               <p> <%= current_user.partner.first_name %> aime aussi le prénom :</p>
             </div>
           </div>
-        <div class="card-category"><%= image_tag "namedeco.png", class: "nameimage" %>
-          <div class="name-disclaim"><%= params[:match].capitalize %>
+          <div class="card-category"><%= image_tag "namedeco.png", class: "nameimage" %>
+            <div class="name-disclaim"><%= params[:match].capitalize %>
+            </div>
           </div>
         </div>
       </div>
     </div>
   <% end %>
-</div>
-
   <div class="cards-container">
     <div class="name-cards flip-card">
       <div class="flip-card-inner">
