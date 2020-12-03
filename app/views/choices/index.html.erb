@@ -1,4 +1,4 @@
-<div class="container" my-3>
+<div class="container">
   <div>
   <br>
   <h3><i class="far fa-heart"></i> Prénoms favoris</h3>
@@ -8,7 +8,7 @@
       <div class="fav-content">
         <%= choice.name.name.capitalize %>
         <% if choice.accepted && Choice.find_by(user: current_user.partner, accepted: true , name:choice.name) %>
-          <i class="fas fa-star"></i>
+          <p>(Match)</p>
         <% end %>
       </div>
 

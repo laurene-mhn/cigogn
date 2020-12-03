@@ -10,10 +10,26 @@
   offset-multiplier: 4px;
 }
 
+.fav-cards:last-child {
+  margin-bottom: 120px;
+}
+
 .fav-content {
   display: flex;
   font-weight: bold;
   font-size: x-large;
+}
+
+.fav-content p {
+  display: flex;
+  font-size: 14px !important;
+  font-weight: normal !important;
+  font-style: italic;
+  color: $form-gray;
+  align-items: center;
+  margin-left: 5px;
+  margin-bottom: 0;
+  padding-top: 3px;
 }
 
 .fav-content i {
