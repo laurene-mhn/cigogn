@@ -32,7 +32,8 @@
 .first-name {
   text-align: center;
   font-weight: bold;
-  font-size: xxx-large;
+  // font-size: xxx-large;
+  font-size: 48px;
 }
 
 .last-name {
@@ -50,8 +51,8 @@
 }
 
 .name-back-card {
-  padding-top: 10%;
-  padding-bottom: 5%;
+  padding-top: 7%;
+  // padding-bottom: 5%;
   font-size: large;
   font-weight: bolder;
   display: flex;
@@ -59,7 +60,8 @@
 }
 
 .name-infos {
-  padding: 10%;
+  padding: 0% 10% 0% 10%;
+
 }
 
 .flip-card {
@@ -102,4 +104,11 @@
 /* Style the back side */
 .flip-card-back {
   transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+}
+
+.flip-card-back-content {
+    overflow: hidden;
+    flex-grow: 1;
 }

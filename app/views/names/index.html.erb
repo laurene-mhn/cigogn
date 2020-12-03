@@ -39,7 +39,7 @@
               <%= @name.name.capitalize %>
             </div>
             <div class="last-name">
-              DURAND
+            <%= current_user.last_name.upcase %>
             </div>
           </div>
           <div class="infos-btn btn-<%= @name.gender %>">
@@ -48,15 +48,16 @@
           </div>
         </div>
         <div class="flip-card-back <%= @name.gender %>-card">
-          <div class="name-back-card"><%= @name.name.upcase %></div>
-          <% unless @name.origin.blank? %>
-            <% if @name.origin.count == 2 %>
-              <p class="text-center"><small>(<%= @name.origin[0] %> - <%= @name.origin[1] %>)</small></p>
-            <% else %>
-              <p class="text-center"><small>(<%= @name.origin[0] %>)</small></p>
+          <div class="flip-card-back-content">
+            <div class="name-back-card"><%= @name.name.upcase %></div>
+            <% unless @name.origin.blank? %>
+              <% if @name.origin.count == 2 %>
+                <p class="text-center"><small>(<%= @name.origin[0] %> - <%= @name.origin[1] %>)</small></p>
+              <% else %>
+                <p class="text-center"><small>(<%= @name.origin[0] %>)</small></p>
+              <% end %>
             <% end %>
-          <% end %>
-            <div style="height:50vh;width:100%;font:16px/26px Open Sans, sans-serif;overflow:auto;">
+            <div style="height:52vh;width:100%;font:16px/26px Open Sans, sans-serif;overflow:auto;">
               <div class="name-infos">
                 <p><i><%= @name.meaning %></i></p>
                 <%# <p><strong>Origin:</strong> = @name.origin[0] - = @name.origin[1]</p> %>
@@ -77,6 +78,7 @@
                 <% end %>
               </div>
             </div>
+          </div>
           <div class="back-btn btn-<%= @name.gender %>">
             <i class="fas fa-undo"></i>
           </div>
