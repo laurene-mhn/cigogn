@@ -10,6 +10,10 @@
   offset-multiplier: 4px;
 }
 
+.fav-cards:last-child {
+  margin-bottom: 120px;
+}
+
 .fav-content {
   display: flex;
   font-weight: bold;

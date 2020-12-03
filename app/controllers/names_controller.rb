@@ -12,19 +12,19 @@ class NamesController < ApplicationController
         names = names.where("origin && ARRAY[?]::varchar[]", filter.origin)
       end
       # Fonctionne UNIQUEMENT sur un des filtres
-      if filter.length.any? && filter.length != ["court 0-5car", "moyen 6-9car", "long 10car & plus"]
+      if filter.length.any? && filter.length != ["Court", "Moyen", "long 10car & plus"]
         case filter.length
-        when ["court 0-5car"]
+        when ["Court"]
           names = names.where("char_length(name) < ?", 6)
-        when ["moyen 6-9car"]
+        when ["Moyen"]
           names = names.where("char_length(name) > ? AND char_length(name) < ?", 5, 10)
-        when ["long 10car & plus"]
+        when ["Long"]
           names = names.where("char_length(name) > ?", 9)
-        when ["court 0-5car", "moyen 6-9car"]
+        when ["Court", "Moyen"]
           names = names.where("char_length(name) < ?", 10)
-        when ["moyen 6-9car", "long 10car & plus"]
+        when ["Moyen", "Long"]
           names = names.where("char_length(name) > ?", 5)
-        when ["court 0-5car", "long 10car & plus"]
+        when ["Court", "Long"]
           names = names.where.not("char_length(name) > ? AND char_length(name) < ?", 5, 10)
         end
       end
