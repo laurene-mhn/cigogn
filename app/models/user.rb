@@ -11,11 +11,17 @@ class User < ApplicationRecord
   has_one :filter, dependent: :destroy
   has_one_attached :photo
   after_validation :generate_code, on: :create
+  before_save :set_default_name
 
   private
 
   def generate_code
     self.code = SecureRandom.alphanumeric
     # self.code = SecureRandom.alphanumeric(4)
+  end
+
+  def set_default_name
+    self.first_name ||= ""
+    self.last_name ||= ""
   end
 end
