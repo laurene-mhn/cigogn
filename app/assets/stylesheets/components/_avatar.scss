@@ -47,6 +47,7 @@
   height: 170px;
   object-fit: cover;
   border-radius: 50%;
+  image-rendering: pixelated;
 }
 
 .modal-body .avatar-profile{
@@ -88,6 +89,3 @@
   right: 0;
   bottom: 0;
 }
-
-
-
