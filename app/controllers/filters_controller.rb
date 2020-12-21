@@ -27,6 +27,12 @@ class FiltersController < ApplicationController
     redirect_to names_path
   end
 
+  def destroy
+    @filter = Filter.find(params[:id])
+    @filter.destroy
+    redirect_to filters_path
+  end
+
   private
 
   def filter_params
