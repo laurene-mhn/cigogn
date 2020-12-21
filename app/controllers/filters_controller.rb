@@ -27,6 +27,13 @@ class FiltersController < ApplicationController
     redirect_to names_path
   end
 
+  def destroy
+    @filter = Filter.last
+    @filter.destroy
+    authorize @filter
+    redirect_to new_filter_path
+  end
+
   private
 
   def filter_params

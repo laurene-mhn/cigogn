@@ -56,7 +56,6 @@
               input_html: { class: "tag-selector" },
               item_wrapper_class: 'tag-item' %>
 
-
     <%= f.input :start_with, label:"Commence par",
                  placeholder:"Saisir une ou plusieurs lettres",
                   label_html: { class: "titles" } %>
@@ -70,8 +69,9 @@
 
   <div class="text-center footer-names">
     <%= f.button :submit, value:"C'EST PARTI !", class: "btn btn-form" %>
-
+    <br>
+    <br>
+    <%= link_to "Réinitialiser", new_filter_path, method: :delete, data: { confirm: "Voulez-vous réinitialiser vos préférences ?" } %>
     <%#= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
   </div>
-
 <% end %>

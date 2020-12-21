@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   get "/end_list", to: "pages#end_list"
   resources :names, only: :index
   resources :choices, only: [ :create, :index, :update ]
-  resources :filters, only: [ :new, :create, :edit, :update ]
+  resources :filters, only: [ :new, :create, :edit, :update, :destroy ]
   resources :matches, only: :index
 end
