@@ -28,9 +28,10 @@ class FiltersController < ApplicationController
   end
 
   def destroy
-    @filter = Filter.find(params[:id])
+    @filter = Filter.last
     @filter.destroy
-    redirect_to filters_path
+    authorize @filter
+    redirect_to new_filter_path
   end
 
   private

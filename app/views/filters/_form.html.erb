@@ -70,7 +70,8 @@
   <div class="text-center footer-names">
     <%= f.button :submit, value:"C'EST PARTI !", class: "btn btn-form" %>
     <br>
-    <%= link_to "Réinitialiser", filter_path(@filter), method: :delete, data: { confirm: "Voulez-vous réinitialiser vos filtres ?" } %>
+    <br>
+    <%= link_to "Réinitialiser", new_filter_path, method: :delete, data: { confirm: "Voulez-vous réinitialiser vos préférences ?" } %>
     <%#= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
   </div>
 <% end %>
