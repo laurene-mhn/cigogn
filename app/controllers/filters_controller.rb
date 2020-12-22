@@ -31,6 +31,8 @@ class FiltersController < ApplicationController
     @filter = Filter.last
     @filter.destroy
     authorize @filter
+    # @choice = Choice.current_user.all
+    # @choice.destroy_all
     redirect_to new_filter_path
   end
 

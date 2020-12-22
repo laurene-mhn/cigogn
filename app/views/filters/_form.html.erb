@@ -69,9 +69,10 @@
 
   <div class="text-center footer-names">
     <%= f.button :submit, value:"C'EST PARTI !", class: "btn btn-form" %>
-    <br>
-    <br>
-    <%= link_to "Réinitialiser", new_filter_path, method: :delete, data: { confirm: "Voulez-vous réinitialiser vos préférences ?" } %>
-    <%#= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+    <% if Filter.last != nil %>
+      <br>
+      <br>
+      <%= link_to "Réinitialiser", new_filter_path, method: :delete, data: { confirm: "Voulez-vous réinitialiser vos préférences ?" } %>
+    <% end %>
   </div>
 <% end %>
